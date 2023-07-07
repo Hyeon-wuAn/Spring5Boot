@@ -1,5 +1,6 @@
 package zero.hello.boot.spring5boot.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import zero.hello.boot.spring5boot.model.Member;
 
 import java.util.List;
@@ -10,4 +11,5 @@ public interface MemberService {
 
     List<Member> readMember();
 
+    String findzip(String dong) throws JsonProcessingException;
 }
