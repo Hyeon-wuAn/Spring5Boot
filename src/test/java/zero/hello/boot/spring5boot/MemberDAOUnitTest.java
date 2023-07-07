@@ -9,8 +9,11 @@ import org.springframework.context.annotation.Import;
 import zero.hello.boot.spring5boot.dao.MemberDAO;
 import zero.hello.boot.spring5boot.dao.MemberDAOImpl;
 import zero.hello.boot.spring5boot.model.Member;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 @MybatisTest
@@ -30,6 +33,16 @@ public class MemberDAOUnitTest {
         int result = mdao.insertMember(m);
         System.out.println(result);
         assertEquals(result, 1);
+
+    }
+
+    @Test
+    @DisplayName("MemberDAO select Test")
+    void selectMember() {
+        List<Member> results = mdao.selectMember();
+
+        System.out.println(results);
+        assertNotNull(results);
 
     }
 
